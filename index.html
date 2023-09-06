@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Задание по frontend программированию</title>
+		<style>
+			.container {
+				width: 100%;
+				height: 100%;
+				background-image: url('./image/main.png');
+				background-size: 100% 100%;
+			}
+			.btn {
+				color: white;
+				font-size: 16px;
+				padding: 7px 11px;
+				border-radius: 100px;
+				border: none;
+			}
+
+			.blue {
+				background: #3877ee;
+			}
+
+			.green {
+				background-color: #6abf4b;
+			}
+			.oneG {
+				position: absolute;
+				top: 282px;
+				left: 488px;
+			}
+			.twoG {
+				position: absolute;
+				top: 239px;
+				left: 813px;
+			}
+			.threeG {
+				position: absolute;
+				top: 400px;
+				left: 925px;
+			}
+			.fourG {
+				position: absolute;
+				top: 472px;
+				left: 784px;
+			}
+			.oneB {
+				position: absolute;
+				top: 164px;
+				left: 410px;
+			}
+			.twoB {
+				position: absolute;
+				top: 130px;
+				left: 974px;
+			}
+			.threeB {
+				position: absolute;
+				top: 282px;
+				left: 1003px;
+			}
+			.fourB {
+				position: absolute;
+				top: 376px;
+				left: 764px;
+			}
+			.fiveB {
+				position: absolute;
+				top: 426px;
+				left: 314px;
+			}
+			.sixB {
+				position: absolute;
+				top: 426px;
+				left: 1129px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button class="btn green oneG" onClick="changeButtonSize()">+</button>
+			<button class="btn green twoG" onClick="changeButtonSize()">+</button>
+			<button class="btn green threeG" onClick="changeButtonSize()">+</button>
+			<button class="btn green fourG" onClick="changeButtonSize()">+</button>
+
+			<button class="btn blue oneB" onClick="changeButtonSize()">+</button>
+			<button class="btn blue twoB" onClick="changeButtonSize()">+</button>
+			<button class="btn blue threeB" onClick="changeButtonSize()">+</button>
+			<button class="btn blue fourB" onClick="changeButtonSize()">+</button>
+			<button class="btn blue fiveB" onClick="changeButtonSize()">+</button>
+			<button class="btn blue sixB" onClick="changeButtonSize()">+</button>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const buttons = document.querySelectorAll('.btn')
+				let isButtonLarge = false
+
+				buttons.forEach(button => {
+					button.addEventListener('click', () => {
+						if (isButtonLarge) {
+							button.style.fontSize = '16px'
+							button.style.padding = '7px 11px'
+						} else {
+							button.style.fontSize = '24px'
+							button.style.padding = '15px 30px'
+						}
+						isButtonLarge = !isButtonLarge
+					})
+				})
+			})
+		</script>
+	</body>
+</html>
